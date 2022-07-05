@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Create Your Own Poll Questions</h1>
+
+<form action="" method="POST" style="display: block;width: 200px;margin-left: auto;margin-right: auto;text-align: center;">
+    {% csrf_token %}
+    <label for="question">Enter your question:</label>
+    <textarea  name="question" style="text-align: center;"rows="4" cols="25"></textarea>
+    <label for="option1">Enter your first option:</label>
+    <input type="text" name="option1" />
+    <label for="option2">Enter your second option:</label>
+    <input type="text" name="option2" />
+    <label for="option3">Enter your third option:</label>
+    <input type="text" name="option3" />
+    <label for="option4">Enter your fourth option:</label>
+    <input type="text" name="option4" />
+    <input type="submit" value = "Submit" class = 'btn btn-primary'>
+</form>
+
+{% endblock %}

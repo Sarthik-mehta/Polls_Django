@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>User Profile</h1>
+<br>
+<br>
+<h3>Name: {{user.username}}</h3>
+<h3>Email: {{user.email}}</h3>
+
+<div class="list-group">
+    {% for question in questions %}
+    <a href="{% url 'vote' question.id %}" class="list-group-item list-group-item-action">
+        <h5>{{question.question}}</h5></a>
+   {% endfor %}
+
+   {% if enable %}
+   <a href="create"><input type="button" value="Create" class = 'btn btn-primary'></a>
+    {% else %}
+    <input type="button" value="Create" class = 'btn btn-primary' disabled = true>
+    <small><i>You have reached your limit, you have already created 5 polls. </i></small>
+    {% endif %}
+</div>
+
+
+{% endblock %}
